@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>写真撮影アプリ</title>
+    <title>傾き表示＋カメラアプリ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <video id="video" autoplay></video>
-        <button id="snap">リセット</button>
+        <video id="video" autoplay playsinline muted></video>
+        <button id="reset">リセット</button>
     </div>
-    <div id="angle" class="angle">
-        傾きなし
+    <div id="angleContainer" class="angleContainer">
+        <div id="leftmax" class="leftmax"></div>
+        <div id="alpha" class="alpha"></div>
+        <div id="rightmax" class="rightmax"></div>
     </div>
     <script src="script.js"></script>
 </body>
