@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
         rightMax = Math.min(rightMax, alpha);
 
         // angle.innerHTML に alpha leftMax rightMax を表示
-        alphaInfo.innerHTML = `alpha: ${alpha}`;
-        leftMaxInfo.innerHTML = `leftMax: ${leftMax}`;
-        rightMaxInfo.innerHTML = `rightMax: ${Math.abs(rightMax)}`;
+        alphaInfo.innerHTML = `[ ${alpha}° ]`;
+        leftMaxInfo.innerHTML = `${leftMax}° <`;
+        rightMaxInfo.innerHTML = `> ${Math.abs(rightMax)}°`;
 
     });
 
