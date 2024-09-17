@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>傾き表示＋カメラアプリ</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        // three.module.min.jsを読み込む
+        import * as THREE from './build/three.module.min.js';
+        import { DeviceOrientationControls } from './build/DeviceOrientationControls.js';
+        import './script.js';
+    </script>
 </head>
 <body>
     <div class="container">
         <video id="video" autoplay playsinline muted></video>
-        <button id="reset">リセット</button>
+        <button id="reset">開始</button>
     </div>
     <div id="angleContainer" class="angleContainer">
         <div id="leftmax" class="leftmax"></div>
-        <div id="alpha" class="alpha"></div>
+        <div id="angle" class="angle"></div>
         <div id="rightmax" class="rightmax"></div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
