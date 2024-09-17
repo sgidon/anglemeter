@@ -10,6 +10,4 @@ vscodeのlive server を起動する。
 
 # todo
 
-* フルスクリーン化（Androidのみ？）
 * 画面レイアウトの整備
-* github pagesで公開
