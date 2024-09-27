@@ -11,3 +11,4 @@ vscodeのlive server を起動する。
 # todo
 
 * 画面レイアウトの整備
+* iPhoneで動かない問題の対応
