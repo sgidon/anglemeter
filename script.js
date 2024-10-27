@@ -62,11 +62,20 @@ document.addEventListener('DOMContentLoaded', function () {
             var isiOS = ua.match(/iPhone|iPad|iPod/i);
             if (isiOS) {
                 // iOSの場合、クリックイベントを元にdeviceorientationの権限を有効にする
-                DeviceOrientationEvent.requestPermission().then(function () {
-                    // イベントリスナーを登録
-                    loop();
-                }).catch(function (e) { console.log(e) });
-
+                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                    DeviceOrientationEvent.requestPermission().then(function (response) {
+                        if (response === 'granted') {
+                            loop();
+                        } else {
+                            console.log('DeviceOrientationEvent permission denied');
+                        }
+                    }).catch(function (e) { console.log(e) });
+                } else {
+                    // Fallback for older iOS versions
+                    window.addEventListener('deviceorientation', function (event) {
+                        loop();
+                    }, { once: true });
+                }
             } else {
                 loop();
             }
